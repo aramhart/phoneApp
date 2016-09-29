@@ -2,9 +2,20 @@
   <h3>You chose <span class="label label-default">SERVICES</span></p></h3>
 </div>
 
+<div>
+	<h4>Here is an example of using an angular factory to work with a public REST API:</h4>
+
+	type in a search term to search a list of television shows:
+</div>
 <div class="animated zoomInRight">
         <div class="input-group search-bar">
           <input type="text" ng-model="searchBarInput" ng-model-options="{ debounce: 800 }" onclick="select()" class="form-control" placeholder="Enter full movie name" autofocus />
           <span class="input-group-addon bar-style"><i class="glyphicon glyphicon-search"></i></span>
-   </div>
+</div>
 
+<div>
+   search results:
+   <p>
+   <div ng-if="!searchResults.results">searching ...</div>
+   <div ng-repeat="results in searchResults.results">{{results.title}}<br><img class="center-block" ng-src="{{results.artwork_208x117}}" ng-click="updateCurrentShow($index);" alt="Description" data-toggle="modal" data-target="#showModal"> <p></div>
+</div>

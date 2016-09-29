@@ -12,7 +12,7 @@ angular.module('predpolAppApp')
     
     $scope.searchBarInput = 'Mighty';
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
-    
+
     $scope.$watch('searchBarInput', function() {
       fetch();
     });
@@ -30,14 +30,12 @@ angular.module('predpolAppApp')
     }
   
     $scope.getChannelIds = function () {
-      console.log('hello');
       movieApiFactory.getChannelIds() //get channel Ids
                        .then(function (response) {
                             $scope.channels = response;                           
                             movieApiFactory.getChannelIds($scope.channelType.value) //pass channel type
                                           .then(function (response) {
                                            $scope.genres = response.data;
-                                           console.log("called get channel ids"+response.data);
                             });
                         }); 
     }
@@ -49,15 +47,13 @@ angular.module('predpolAppApp')
                             movieApiFactory.getSearchResults($scope.searchBarInput) //pass in search bar results
                                           .then(function (response) {
                                            $scope.searchResults = response.data;
-                                           console.log('updated search results.. ');
-                                           console.log(response);
+                                           
                             });
                         });
     }
 
     
     $scope.updateCurrentShow = function(imageClicked){
-    console.log('search results'+$scope.searchResults);
     
     $scope.currentShow = $scope.searchResults.results[imageClicked];
 

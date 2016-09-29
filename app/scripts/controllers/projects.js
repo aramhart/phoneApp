@@ -8,10 +8,8 @@
  * Controller of the predpolAppApp
  */
 angular.module('predpolAppApp')
-  .controller('ProjectsCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ProjectsCtrl', function ($scope) {
+  
+   $scope.map = { center: { latitude: 36.9741, longitude: -122.0308 }, zoom: 8 };
+
   });

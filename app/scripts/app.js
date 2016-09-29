@@ -10,11 +10,13 @@
  */
 angular
   .module('predpolAppApp', [
+
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
+    'uiGmapgoogle-maps',
     'ngTouch'
   ])
   .config(function ($routeProvider) {

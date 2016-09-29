@@ -47,12 +47,6 @@ angular.module('predpolAppApp')
                 });
     }
 
-
-
-    // Public API here
-    //return {
-     // someMethod: function () {
-        return api;
-     // }
-   // };
+    return api;
+   
   });

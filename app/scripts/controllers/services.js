@@ -11,10 +11,12 @@ angular.module('predpolAppApp')
   .controller('ServicesCtrl', function ($http, $scope, movieApiFactory) {
     
     $scope.searchBarInput = 'Mighty';
-
+    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    
     $scope.$watch('searchBarInput', function() {
       fetch();
     });
+ 
  $scope.getGenres = function () {
 
       movieApiFactory.getGenres() //get genres
